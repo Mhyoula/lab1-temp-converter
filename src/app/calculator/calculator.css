@@ -1,0 +1,130 @@
+:host {
+  display: block;
+  box-sizing: border-box;
+  max-width: 520px;
+  margin: 64px auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 32px;
+  background: #fff;
+  border: 1px solid #e0e7f0;
+  border-radius: 20px;
+  box-shadow: 0 12px 36px rgb(36 50 75 / 7%);
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-size: 28px;
+  letter-spacing: -0.7px;
+  color: #51459a;
+}
+
+p {
+  margin: 0 0 28px;
+  color: #647086;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.champ {
+  display: grid;
+  gap: 9px;
+  margin: 22px 0;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+input, output {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font: inherit;
+}
+
+input {
+  background: #fcfdff;
+  color: #24324b;
+}
+
+output {
+  background: #ecf8f1;
+  border-color: #c5e7d4;
+  color: #216344;
+  font-size: 24px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.operations {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 28px;
+}
+
+button {
+  --teinte: #2855a6;
+  --fond: #edf3ff;
+  --bordure: #d7e4ff;
+  min-height: 48px;
+  border: 1px solid var(--bordure);
+  border-radius: 10px;
+  background: var(--fond);
+  color: var(--teinte);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+button:nth-child(2) {
+  --teinte: #7846a3;
+  --fond: #f4edfc;
+  --bordure: #e4d4f4;
+}
+
+button:nth-child(3) {
+  --teinte: #926018;
+  --fond: #fff5df;
+  --bordure: #f2dfb2;
+}
+
+button:nth-child(4) {
+  --teinte: #a43e60;
+  --fond: #fdeef3;
+  --bordure: #f3d0dc;
+}
+
+button:hover {
+  background: var(--teinte);
+  border-color: var(--teinte);
+  color: #fff;
+}
+
+button:active { background: var(--teinte); color: #fff; filter: brightness(0.9); }
+
+input:focus-visible, button:focus-visible {
+  outline: 3px solid #2855a6;
+  outline-offset: 3px;
+}
+
+.erreur {
+  margin: 20px 0 0;
+  padding: 12px;
+  border-radius: 10px;
+  background: #fff1f0;
+  color: #a32219;
+}
+
+@media (max-width: 480px) {
+  :host { margin: 28px auto; padding: 0 16px; }
+  section { padding: 24px 20px; }
+  .operations { gap: 8px; }
+}

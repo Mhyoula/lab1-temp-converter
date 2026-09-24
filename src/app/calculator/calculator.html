@@ -1,0 +1,32 @@
+<section aria-labelledby="titre-calculatrice">
+  <h1 id="titre-calculatrice">Calculatrice</h1>
+  <p>Saisissez deux nombres, puis choisissez une opération.</p>
+
+  <div class="champ">
+    <label for="premier-nombre">Premier nombre :</label>
+    <input id="premier-nombre" type="number" step="any" required
+      [(ngModel)]="premierNombre" (ngModelChange)="effacerResultat()">
+  </div>
+
+  <div class="champ">
+    <label for="second-nombre">Second nombre :</label>
+    <input id="second-nombre" type="number" step="any" required
+      [(ngModel)]="secondNombre" (ngModelChange)="effacerResultat()">
+  </div>
+
+  <div class="operations" role="group" aria-label="Opérations">
+    <button type="button" (click)="calculer('+')" aria-label="Addition">+</button>
+    <button type="button" (click)="calculer('-')" aria-label="Soustraction">-</button>
+    <button type="button" (click)="calculer('*')" aria-label="Multiplication">*</button>
+    <button type="button" (click)="calculer('/')" aria-label="Division">/</button>
+  </div>
+
+  <div class="champ">
+    <label for="resultat">Résultat :</label>
+    <output id="resultat" for="premier-nombre second-nombre" aria-live="polite">{{ resultat() ?? '—' }}</output>
+  </div>
+
+  @if (erreur()) {
+    <p class="erreur" role="alert">{{ erreur() }}</p>
+  }
+</section>
